@@ -20,6 +20,6 @@ export default {
   #app
     width 100%
     height 100%
-    background red
+    background #ffffff
     position relative
 </style>
