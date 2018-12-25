@@ -1,24 +1,24 @@
 <template>
     <div class="footer_guide border-1px">
-      <a href="javascript:;" class="guide_item on">
+      <a  class="guide_item" :class="{on: '/msite'===$route.path}" @click="goTo('/msite')">
       <span class="item_icon">
         <i class="iconfont icon-waimai"></i>
       </span>
         <span>外卖</span>
       </a>
-      <a href="javascript:;" class="guide_item">
+      <a class="guide_item" :class="{on:'/search'=== $route.path}" @click="goTo('/search')">
       <span class="item_icon">
         <i class="iconfont icon-search"></i>
       </span>
         <span>搜索</span>
       </a>
-      <a href="javascript:;" class="guide_item">
+      <a class="guide_item" :class="{on:'/order'=== $route.path}" @click="goTo('/order')">
       <span class="item_icon">
         <i class="iconfont icon-dingdan"></i>
       </span>
         <span>订单</span>
       </a>
-      <a href="javascript:;" class="guide_item">
+      <a  class="guide_item" :class="{on:'/profile'=== $route.path}" @click="goTo('/profile')">
       <span class="item_icon">
         <i class="iconfont icon-geren"></i>
       </span>
@@ -28,9 +28,15 @@
 </template>
 
 <script>
-export default {}
+export default{
+  methods: {
+    goTo (path) {
+      this.$router.replace(path)
+    }
+  }
+}
 </script>
-<script lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" rel="stylesheet/stylus">
   /*引入混合*/
   @import "../../common/stylus/mixins.styl"
   .footer_guide  //footer
@@ -60,5 +66,4 @@ export default {}
         margin-bottom 2px
         .iconfont
           font-size 22px
-
-</script>
+</style>

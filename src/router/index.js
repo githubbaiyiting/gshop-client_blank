@@ -8,10 +8,12 @@ import Search from '../pages/Search/Search.vue'
 import Order from '../pages/Order/Order.vue'
 import Profile from '../pages/Profile/Profile.vue'
 
+
 // 声明使用插件
 Vue.use(VueRouter)
+
 export default new VueRouter({
-    // 所有路由
+  // 所有路由
   routes: [
     {
       path: '/msite',
@@ -36,4 +38,3 @@ export default new VueRouter({
     }
   ]
 })
-
