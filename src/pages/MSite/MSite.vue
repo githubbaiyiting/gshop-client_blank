@@ -2,17 +2,15 @@
   <div>
     <section class="msite">
       <!--首页头部-->
-      <header class="msite_header">
-          <span class="header_search">
-            <i class="iconfont icon-sousuo"></i>
-          </span>
-        <span class="header_title">
-            <span class="header_title_text ellipsis">昌平区北七家宏福科技园(337省道北)</span>
-          </span>
-        <span class="header_login">
-            <span class="header_login_text">登录|注册</span>
-          </span>
-      </header>
+      <headerTop title="昌平区北七家宏福科技园(337省道北)">
+        <span class="header_search" slot="header_left">
+          <i class="iconfont icon-sousuo"></i>
+        </span>
+        <span class="header_login" slot="header_right">
+          <span class="header_login_text">登录|注册</span>
+        </span>
+      </headerTop>
+
       <!--首页导航-->
       <nav class="msite_nav">
         <div class="swiper-container">
@@ -314,13 +312,29 @@
 </template>
 
 <script>
-  export default {}
+import headerTop from '../../components/headerTop/headerTop.vue'
+import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.min.css'
+
+export default {
+  mounted () {
+    new Swiper('.swiper-container', {
+      loop: true,
+      pagination: {
+        el: 'swiper-pagination',
+      }
+    })
+  },
+  components: {
+    headerTop: headerTop
+  }
+}
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixins.styl"
   .msite  //首页
     width 100%
-    .msite_header
+    .header
       background-color #02a774
       position fixed
       z-index 100

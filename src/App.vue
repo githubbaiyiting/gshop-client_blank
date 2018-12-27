@@ -2,7 +2,7 @@
   <div id="app">
     <!--路由标签-->
     <router-view/>
-    <FooterGuide/>
+    <FooterGuide v-show="$route.meta.showFooter" />
   </div>
 </template>
 
